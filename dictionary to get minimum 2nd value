@@ -1,0 +1,42 @@
+n=[]
+s=[]
+for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        
+        n.append(name)
+        
+        s.append(score)
+        paired=zip(n,s)
+        
+
+together=dict(paired)
+max1=0
+for values in together.values():
+    
+    if max1<values:
+        max1=values
+    else:
+        pass
+print(max1)
+together2=together.copy()
+for keys,values in together2.items():
+    if values==max1:
+        together.pop(keys)
+    else:
+        pass
+print(together)
+max2=0
+for values in together.values():
+    
+    if max2<values:
+        max2=values
+    else:
+        pass
+
+names_with_min2 = [key for key, value in together.items() if value == min2]
+
+# Sort names alphabetically
+names_with_min2.sort()
+for name in names_with_min2:
+    print(name)
